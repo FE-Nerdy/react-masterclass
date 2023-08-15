@@ -1,25 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { ThemeProvider } from "styled-components";
-import App from './App.tsx';
-
-const darkTheme = {
-  textColor: "whitesmoke",
-  backgroundColor: "#111",
-};
-
-const lightTheme = {
-  textColor: "#111",
-  backgroundColor: "whitesmoke",
-};
+import App from "./App";
 
 const rootElement = document.getElementById('root');
 if (!rootElement) throw new Error('Failed to find the root element');
 const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={darkTheme}>
-      <App />
-    </ThemeProvider>
+     <App />
   </React.StrictMode>
 );

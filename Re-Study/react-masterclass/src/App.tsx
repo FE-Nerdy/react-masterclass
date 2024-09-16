@@ -1,5 +1,6 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
+import { ReactQueryDevtools } from "react-query/devtools";
 import Router from "./Router.tsx";
 
 const GlobalStyle = createGlobalStyle`
@@ -55,9 +56,11 @@ table {
   box-sizing: border-box;
 }
 body {
+  font-weight: 300;
   font-family: 'Source Sans Pro', sans-serif;
   background-color:${(props) => props.theme.bgColor};
-  color:${(props) => props.theme.textColor}
+  color:${(props) => props.theme.textColor};
+  line-height: 1.2;
 }
 a {
   text-decoration:none;
@@ -70,6 +73,7 @@ function App() {
     <>
       <GlobalStyle />
       <Router />
+      <ReactQueryDevtools initialIsOpen={true} />
     </>
   );
 }
